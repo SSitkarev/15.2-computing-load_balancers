@@ -1,4 +1,4 @@
-// Create SA
+// Create Service Account
 resource "yandex_iam_service_account" "sa-bucket" {
     name      = "sa-for-bucket"
 }
@@ -26,7 +26,7 @@ resource "yandex_storage_bucket" "sitkarev-bucket" {
 }
 
 // Add picture to bucket
-resource "yandex_storage_object" "object-1" {
+resource "yandex_storage_object" "bucket_image" {
     access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
     secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
     bucket = yandex_storage_bucket.sitkarev-bucket.bucket

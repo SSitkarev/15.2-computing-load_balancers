@@ -4,13 +4,9 @@
 
 ### 1. Создать бакет Object Storage и разместить в нём файл с картинкой:
 
-Создать бакет в Object Storage с произвольным именем (например, имя_студента_дата).
+Создать бакет в Object Storage с произвольным именем (например, имя_студента_дата). Положить в бакет файл с картинкой. Сделать файл доступным из интернета.
 
 [Бакет](https://github.com/SSitkarev/15.2-computing-load_balancers/blob/main/bucket.tf)
-
-Положить в бакет файл с картинкой.
-
-Сделать файл доступным из интернета.
 
 ![Задание1](https://github.com/SSitkarev/15.2-computing-load_balancers/blob/main/img/1.jpg)
 

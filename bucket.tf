@@ -18,10 +18,10 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
 }
 
 // Use keys to create bucket
-resource "yandex_storage_bucket" "netology-bucket" {
+resource "yandex_storage_bucket" "sitkarev-bucket" {
     access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
     secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
-    bucket = "sitkarev_bucket"
+    bucket = "sitkarev-bucket"
     acl    = "public-read"
 }
 
@@ -29,9 +29,9 @@ resource "yandex_storage_bucket" "netology-bucket" {
 resource "yandex_storage_object" "object-1" {
     access_key = yandex_iam_service_account_static_access_key.sa-static-key.access_key
     secret_key = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
-    bucket = yandex_storage_bucket.netology-bucket.bucket
+    bucket = yandex_storage_bucket.sitkarev-bucket.bucket
     key = "bucket_image.jpg"
     source = "img/bucket_image.jpg"
     acl    = "public-read"
-    depends_on = [yandex_storage_bucket.netology-bucket]
+    depends_on = [yandex_storage_bucket.sitkarev-bucket]
 }
